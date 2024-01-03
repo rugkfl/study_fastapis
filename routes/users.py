@@ -18,8 +18,8 @@ async def insert(request : Request):
 # 회원가입 /users/insert -> users/login.html
 @router.get("/insert")  # 어노테이션 (웹에서 업무(function) 호출)
 async def insert(request : Request):
-   pass #business
-   return templates.TemplateResponse(name="users/insert.html", context={'request':request})
+   pass #biz
+   return templates.TemplateResponse(name="users/logins.html", context={'request':request})
 
 
 
