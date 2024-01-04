@@ -21,8 +21,25 @@ async def button(request:Request) :
 
 #@ = Annotation  / 체질을 바꿔주는 역할 / 웹에서 펑션 호출
 
-@router.get("/cards",response_class=HTMLResponse)
-async def card(request:Request) :
+@router.get("/cards")
+# request = Request()
+async def cards(request:Request) :
+    # request.query_params
+    # QueryParams('name=kim+gyungha&email=rugfkl%40naver.com')
+    # dict(request.query_params)
+    # {'name': 'kim gyungha', 'email': 'rugfkl@naver.com'}
+    return templates.TemplateResponse(name="gadgets/cards.html", context={'request':request})
+
+@router.post("/cards")
+async def cards_post(request:Request) :
+    # request.query_params
+    # QueryParams('')
+    # await request.form()
+    # FormData([('name', 'kim gyungha'), ('email', 'rugfkl@naver.com')])
+    # dict(await request.form())
+    # {'name': 'kim gyungha', 'email': 'rugfkl@naver.com'}
+    # form_datas = await request.form()
+    # dict(form_datas)
     pass 
     return templates.TemplateResponse(name="gadgets/cards.html", context={'request':request})
 
